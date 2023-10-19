@@ -683,7 +683,7 @@ fun ReplyPage(
 
     LaunchedEffect(Unit) {
         if (context.appPreferences.postOrReplyWarning) {
-            warningDialogState.show()
+//            warningDialogState.show()
         }
     }
 }
