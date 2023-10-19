@@ -114,33 +114,33 @@ class ReplyActivity : BaseActivity(), View.OnClickListener,
                 .build(true)
 
             if (appPreferences.postOrReplyWarning) {
-                showDialog {
-                    setTitle(R.string.title_dialog_reply_warning)
-                    setMessage(R.string.message_dialog_reply_warning)
-                    setNegativeButton(R.string.btn_cancel_reply) { _, _ ->
-                        finish()
-                    }
-                    setNeutralButton(R.string.btn_continue_reply, null)
-                    setPositiveButton(R.string.button_official_client_reply) { _, _ ->
-                        val intent = Intent(ACTION_VIEW).setData(getDispatchUri())
-                        val resolveInfos =
-                            packageManager.queryIntentActivities(
-                                intent,
-                                PackageManager.MATCH_DEFAULT_ONLY
-                            )
-                                .filter { it.resolvePackageName != packageName }
-                        try {
-                            if (resolveInfos.isNotEmpty()) {
-                                startActivity(intent)
-                            } else {
-                                toastShort(R.string.toast_official_client_not_install)
-                            }
-                        } catch (e: ActivityNotFoundException) {
-                            toastShort(R.string.toast_official_client_not_install)
-                        }
-                        finish()
-                    }
-                }
+//                showDialog {
+//                    setTitle(R.string.title_dialog_reply_warning)
+//                    setMessage(R.string.message_dialog_reply_warning)
+//                    setNegativeButton(R.string.btn_cancel_reply) { _, _ ->
+//                        finish()
+//                    }
+//                    setNeutralButton(R.string.btn_continue_reply, null)
+//                    setPositiveButton(R.string.button_official_client_reply) { _, _ ->
+//                        val intent = Intent(ACTION_VIEW).setData(getDispatchUri())
+//                        val resolveInfos =
+//                            packageManager.queryIntentActivities(
+//                                intent,
+//                                PackageManager.MATCH_DEFAULT_ONLY
+//                            )
+//                                .filter { it.resolvePackageName != packageName }
+//                        try {
+//                            if (resolveInfos.isNotEmpty()) {
+//                                startActivity(intent)
+//                            } else {
+//                                toastShort(R.string.toast_official_client_not_install)
+//                            }
+//                        } catch (e: ActivityNotFoundException) {
+//                            toastShort(R.string.toast_official_client_not_install)
+//                        }
+//                        finish()
+//                    }
+//                }
             }
         }
     }
