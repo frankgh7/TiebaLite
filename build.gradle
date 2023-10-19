@@ -19,9 +19,11 @@ buildscript {
         }
     }
     repositories {
-        google()
-        gradlePluginPortal()
-        maven { url "https://maven.aliyun.com/repository/public" }
+//        google()
+//        gradlePluginPortal()
+//        maven { url "https://maven.aliyun.com/repository/public" }
+        maven { url "http://100.122.120.151:8081/artifactory/android_group"
+            allowInsecureProtocol=true}
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:8.1.1'
@@ -45,10 +47,14 @@ buildscript {
 
 allprojects {
     repositories {
-        google()
-        mavenCentral()
-        maven { url "https://maven.aliyun.com/repository/public" }
-        maven { url 'https://jitpack.io' }
+//        google()
+//        mavenCentral()
+//        maven { url "https://maven.aliyun.com/repository/public" }
+//        maven { url 'https://jitpack.io' }
+        maven { url "http://100.122.120.151:8081/artifactory/google"
+            allowInsecureProtocol = true}
+        maven { url "http://100.122.120.151:8081/artifactory/android_group"
+            allowInsecureProtocol = true}
     }
 }
 
